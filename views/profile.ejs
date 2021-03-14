@@ -34,11 +34,13 @@
                                 <strong>email</strong>: <%= user.local.email %><br>
                                     <strong>password</strong>: <%= user.local.password %>
                         </p>
+                        <!-- Done it in such a way that we can get ths input field anywhere -->
+                        <%- include partials/colorInput.ejs -%>
 
-                        <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                        <% } else { %>
-                            <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                            <% } %>
+                            <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                            <% } else { %>
+                                <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                                <% } %>
 
                 </div>
             </div>
@@ -100,7 +102,8 @@
                                     <strong>email</strong>: <%= user.google.email %><br>
                                         <strong>name</strong>: <%= user.google.name %>
                         </p>
-
+                        <%- include partials/colorInput.ejs -%>
+                        <br />
                         <a href="/unlink/google" class="btn btn-danger">Unlink</a>
                         <% } else { %>
                             <a href="/connect/google" class="btn btn-danger">Connect Google</a>
